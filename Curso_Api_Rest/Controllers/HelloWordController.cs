@@ -18,7 +18,7 @@ namespace Curso_Api_Rest.Controllers
         }
 
 
-
+        [HttpGet]
         public IActionResult get() {
             logger.LogInformation("Retornando Hola Mundo");
             return Ok(helloWordServices.GetHelloWorld());
