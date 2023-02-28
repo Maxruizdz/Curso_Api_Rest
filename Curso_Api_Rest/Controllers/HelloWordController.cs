@@ -9,17 +9,18 @@ namespace Curso_Api_Rest.Controllers
     {
         IHelloWordService helloWordServices;
 
+        private readonly ILogger<HelloWordController> logger;
 
-        public HelloWordController(IHelloWordService helloWordService) { 
+        public HelloWordController(IHelloWordService helloWordService , ILogger<HelloWordController> logger) { 
         
-        
+        this.logger= logger;
         this.helloWordServices = helloWordService;
         }
 
 
 
         public IActionResult get() {
-
+            logger.LogInformation("Retornando Hola Mundo");
             return Ok(helloWordServices.GetHelloWorld());
         
         
