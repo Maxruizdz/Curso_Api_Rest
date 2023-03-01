@@ -11,6 +11,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //builder.Services.AddScoped<IHelloWordService, HelloWordServices>();
 builder.Services.AddScoped<IHelloWordService>(p=> new HelloWordServices());
+builder.Services.AddScoped<ICategoriaService, CategoriasServices>();
+builder.Services.AddScoped<ITareaServices, TareaServices>();
 
 var app = builder.Build();
 

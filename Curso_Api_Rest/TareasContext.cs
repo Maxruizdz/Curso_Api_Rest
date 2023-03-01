@@ -21,7 +21,7 @@ namespace Curso_Api_Rest
 
             modelBuilder.Entity<Categoria>(categoria =>
             {
-                
+                categoria.ToTable("Categoria");
                 categoria.HasKey(p => p.CategoriaId);
 
                 categoria.Property(p => p.Nombre).IsRequired().HasMaxLength(150);
@@ -40,7 +40,7 @@ namespace Curso_Api_Rest
 
             modelBuilder.Entity<Tarea>(tarea =>
             {
-              
+                tarea.ToTable("Tarea");
                 tarea.HasKey(p => p.TareaId);
 
                 tarea.HasOne(p => p.Categoria).WithMany(p => p.Tareas).HasForeignKey(p => p.CategoriaId);
